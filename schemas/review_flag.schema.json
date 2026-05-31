@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nwas-core/review_flag.schema.json",
+  "title": "ReviewFlag",
+  "type": "object",
+  "required": ["code", "severity", "message"],
+  "properties": {
+    "code": {
+      "type": "string",
+      "enum": [
+        "missing_citation",
+        "weak_evidence",
+        "model_overreach",
+        "corpus_license_risk",
+        "private_data_risk"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["info", "warning", "blocker"]
+    },
+    "message": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

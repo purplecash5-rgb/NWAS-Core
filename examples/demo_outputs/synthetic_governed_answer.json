@@ -1,0 +1,18 @@
+{
+  "answer": "The team can answer cautiously when evidence is adequate and request review when citations or confidence are weak.",
+  "governance": {
+    "answer_mode": "cautious",
+    "evidence_packet_id": "packet-demo-001",
+    "review_flags": [
+      {
+        "code": "weak_evidence",
+        "severity": "warning",
+        "message": "Synthetic example has only one supporting source."
+      }
+    ],
+    "limitations": [
+      "Synthetic example only.",
+      "Not a production answer."
+    ]
+  }
+}

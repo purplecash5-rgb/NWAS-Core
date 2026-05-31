@@ -1,0 +1,39 @@
+{
+  "id": "packet-demo-001",
+  "question": "How can a small team decide whether to answer now or request review?",
+  "profile_stub": {
+    "id": "profile-demo-001",
+    "profile_type": "anonymous_demo",
+    "synthetic": true,
+    "notes": "Synthetic profile used only for framework testing."
+  },
+  "sources": [
+    {
+      "id": "toy-garden-001",
+      "title": "Synthetic Community Garden Note",
+      "source_type": "synthetic",
+      "language": "en",
+      "citation_pointers": [
+        {
+          "pointer_type": "synthetic_id",
+          "label": "garden note section 1",
+          "target": "toy-garden-001#section-1",
+          "source_id": "toy-garden-001"
+        }
+      ]
+    }
+  ],
+  "evidence_items": [
+    {
+      "source_id": "toy-garden-001",
+      "pointer": {
+        "pointer_type": "synthetic_id",
+        "label": "garden note section 1",
+        "target": "toy-garden-001#section-1",
+        "source_id": "toy-garden-001"
+      },
+      "summary": "Synthetic note says the team should pause when evidence is incomplete.",
+      "fit_score": 0.72
+    }
+  ]
+}

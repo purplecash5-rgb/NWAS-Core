@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nwas-core/evidence_packet.schema.json",
+  "title": "EvidencePacket",
+  "type": "object",
+  "required": ["id", "question", "profile_stub", "sources", "evidence_items"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "question": { "type": "string", "minLength": 1 },
+    "profile_stub": { "$ref": "profile_stub.schema.json" },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "source_record.schema.json" }
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "pointer", "summary", "fit_score"],
+        "properties": {
+          "source_id": { "type": "string", "minLength": 1 },
+          "pointer": { "$ref": "citation_pointer.schema.json" },
+          "summary": { "type": "string", "minLength": 1 },
+          "fit_score": { "type": "number", "minimum": 0, "maximum": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

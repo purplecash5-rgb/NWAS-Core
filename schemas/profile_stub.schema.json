@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nwas-core/profile_stub.schema.json",
+  "title": "ProfileStub",
+  "type": "object",
+  "required": ["id", "profile_type", "synthetic"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "profile_type": {
+      "type": "string",
+      "enum": ["anonymous_demo", "operator_supplied"]
+    },
+    "synthetic": { "type": "boolean" },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}

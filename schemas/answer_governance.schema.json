@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nwas-core/answer_governance.schema.json",
+  "title": "AnswerGovernance",
+  "type": "object",
+  "required": ["answer_mode", "evidence_packet_id", "review_flags", "limitations"],
+  "properties": {
+    "answer_mode": {
+      "type": "string",
+      "enum": ["direct", "cautious", "insufficient_evidence", "refuse"]
+    },
+    "evidence_packet_id": { "type": "string", "minLength": 1 },
+    "review_flags": {
+      "type": "array",
+      "items": { "$ref": "review_flag.schema.json" }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

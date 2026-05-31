@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nwas-core/source_record.schema.json",
+  "title": "SourceRecord",
+  "type": "object",
+  "required": ["id", "title", "source_type", "language", "citation_pointers"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "source_type": {
+      "type": "string",
+      "enum": ["synthetic", "user_supplied", "public_domain", "licensed"]
+    },
+    "language": { "type": "string", "minLength": 2 },
+    "citation_pointers": {
+      "type": "array",
+      "items": { "$ref": "citation_pointer.schema.json" }
+    },
+    "content_hash": { "type": "string" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nwas-core/citation_pointer.schema.json",
+  "title": "CitationPointer",
+  "type": "object",
+  "required": ["pointer_type", "label", "target"],
+  "properties": {
+    "pointer_type": {
+      "type": "string",
+      "enum": ["url", "document_anchor", "section_id", "synthetic_id"]
+    },
+    "label": { "type": "string", "minLength": 1 },
+    "target": { "type": "string", "minLength": 1 },
+    "locator": { "type": "string" },
+    "source_id": { "type": "string" }
+  },
+  "additionalProperties": false
+}
