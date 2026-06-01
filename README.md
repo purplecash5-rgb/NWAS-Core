@@ -18,6 +18,11 @@ Bring your own lawful corpus and keep private data in a separate layer.
 
 ## Current Status
 
-This is an early public scaffold. Interfaces are intentionally small and
-implementation-neutral so downstream projects can adapt them without inheriting
-private NWAS data or assumptions.
+NWAS-Core is an early public OSS framework scaffold.
+
+It is suitable for reviewing the architecture and governance direction,
+including public schemas, validation ideas, and synthetic examples.
+
+It is not a production knowledge package. It includes no third-party corpus,
+private profile layer, deployable data store, or domain-specific knowledge
+database.

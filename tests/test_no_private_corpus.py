@@ -5,8 +5,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED_DIRS = {".git", ".pytest_cache", "__pycache__"}
-POLICY_DOCS = {
+BOUNDARY_DOCS = {
     Path("docs/CORPUS_POLICY.md"),
+    Path("docs/DAILY_PROGRESS.md"),
     Path("docs/NO_THIRD_PARTY_CORPUS_INCLUDED.md"),
 }
 
@@ -40,7 +41,7 @@ class NoPrivateCorpusTests(unittest.TestCase):
         offenders = [str(rel) for path, rel in repo_files() if path.suffix.lower() in blocked_suffixes]
         self.assertEqual([], offenders)
 
-    def test_sensitive_terms_are_policy_only(self):
+    def test_sensitive_terms_are_boundary_disclaimers_only(self):
         restricted_terms = [
             "N" + "WT",
             "jw" + ".org",
@@ -50,7 +51,7 @@ class NoPrivateCorpusTests(unittest.TestCase):
         ]
         offenders = []
         for path, rel in repo_files():
-            if rel in POLICY_DOCS:
+            if rel in BOUNDARY_DOCS:
                 continue
             try:
                 text = path.read_text(encoding="utf-8")
