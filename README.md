@@ -16,6 +16,11 @@ Bring your own lawful corpus and keep private data in a separate layer.
 - `examples/demo_outputs/` - synthetic governed-answer examples.
 - `tests/` - lightweight validation and safety tests.
 
+## Core Concepts
+
+- Research Profile Contract: defines safe, auditable retrieval/research modes
+  using explicit source, iteration, export, and audit constraints.
+
 ## Current Status
 
 NWAS-Core is an early public OSS framework scaffold.

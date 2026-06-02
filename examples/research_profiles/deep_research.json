@@ -1,0 +1,48 @@
+{
+  "profile_id": "deep_research",
+  "display_name": "Deep Research",
+  "description": "A broader synthetic profile for multi-pass retrieval with stronger audit expectations.",
+  "intended_use": "Structured exploration of a research question across multiple generic source connector types.",
+  "source_connectors": [
+    {
+      "name": "scholarly_index",
+      "type": "scholarly",
+      "required": false
+    },
+    {
+      "name": "preprint_index",
+      "type": "preprint",
+      "required": false
+    },
+    {
+      "name": "repository_search",
+      "type": "repository",
+      "required": false
+    },
+    {
+      "name": "local_toy_corpus",
+      "type": "local_demo",
+      "required": true
+    }
+  ],
+  "iterations": 5,
+  "questions_per_iteration": 6,
+  "max_results": 40,
+  "export_formats": ["json", "markdown", "citation_report"],
+  "requires_network": true,
+  "risk_notes": {
+    "medical_caution": true,
+    "legal_caution": true,
+    "financial_caution": true,
+    "notes": [
+      "Require explicit uncertainty when evidence is mixed or incomplete.",
+      "Do not convert exploratory findings into professional advice."
+    ]
+  },
+  "audit_requirements": [
+    "Record the active profile_id with each governed answer.",
+    "Record all connector types used during each iteration.",
+    "Preserve citation pointers, review flags, and limitations in exports.",
+    "Record skipped connectors and reason codes when available."
+  ]
+}

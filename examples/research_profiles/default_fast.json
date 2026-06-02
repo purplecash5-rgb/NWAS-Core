@@ -1,0 +1,37 @@
+{
+  "profile_id": "default_fast",
+  "display_name": "Default Fast Research",
+  "description": "A compact synthetic profile for quick source-governed retrieval checks.",
+  "intended_use": "Quick triage of whether a question has enough cited support for a governed draft.",
+  "source_connectors": [
+    {
+      "name": "local_toy_corpus",
+      "type": "local_demo",
+      "required": true
+    },
+    {
+      "name": "repository_search",
+      "type": "repository",
+      "required": false
+    }
+  ],
+  "iterations": 2,
+  "questions_per_iteration": 3,
+  "max_results": 12,
+  "export_formats": ["json", "markdown"],
+  "requires_network": false,
+  "risk_notes": {
+    "medical_caution": true,
+    "legal_caution": true,
+    "financial_caution": true,
+    "notes": [
+      "Use cautious wording for high-stakes topics.",
+      "Treat unsupported claims as insufficient evidence."
+    ]
+  },
+  "audit_requirements": [
+    "Record the active profile_id with each governed answer.",
+    "Preserve source connector names and citation pointers in exports.",
+    "Record iteration and result counts for review."
+  ]
+}
